@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="60dp"
+    android:viewportWidth="300"
+    android:viewportHeight="60">
+
+    <!-- Blue arrow shape -->
+    <path
+        android:fillColor="#0078D7"
+        android:pathData="M0,0 L270,0 L300,30 L270,60 L0,60 Z"/>
+</vector>

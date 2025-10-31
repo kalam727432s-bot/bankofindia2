@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Government Logo -->
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="330dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo2"
+            android:contentDescription="Government Logo"
+            android:layout_marginBottom="28dp" />
+
+        <!-- Card Container -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#caeaff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <!-- Retail Login Header -->
+                <LinearLayout
+                    android:layout_width="400dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/retail_button"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Verified"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="100dp"
+                            android:layout_height="120dp"
+                            android:src="@drawable/tick2"
+                            android:contentDescription="Government Logo"
+                            android:layout_marginBottom="10dp" />
+
+
+                        <TextView
+                            android:textAlignment="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your Verification Successfully!"
+                            android:textSize="20sp"
+                            android:textColor="#F44336"
+                            />
+
+                        <RelativeLayout
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/debitCardLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#BFE8FF"
+                            android:padding="10dp">
+
+                            <!-- Left orange half -->
+                            <View
+                                android:onClick="GoToHome"
+                                android:id="@+id/left_half2"
+                                android:layout_width="100dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentStart="true"
+                                android:background="@drawable/orange_left_shape" />
+
+                            <Button
+                                android:onClick="GoToHome"
+                                android:id="@+id/btnSubmit2"
+                                android:layout_width="150dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="40dp"
+                                android:background="@drawable/gray_right_shape"
+                                android:text="E X I T"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:gravity="center"
+                                android:elevation="2dp"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BOI Copyright © 2025. All Rights Reserved."
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="15dp" />
+
+    </LinearLayout>
+
+</ScrollView>
