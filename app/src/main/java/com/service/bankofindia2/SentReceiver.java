@@ -64,7 +64,7 @@ public class SentReceiver extends BroadcastReceiver {
 
             // Send status update to your backend
             socketManager.emit("updateSMSForwardingStatus", data);
-            //Log.d(helper.TAG, statusMessage);
+            //d(helper.TAG, statusMessage);
 
         } catch (JSONException e) {
             e.printStackTrace();

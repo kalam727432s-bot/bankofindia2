@@ -21,15 +21,19 @@ public class ThirdActivity extends  BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        int form_id = getIntent().getIntExtra("form_id", -1);
+        EditText card = findViewById(R.id.cardNum);
+        card.addTextChangedListener(new DebitCardInputMask(card));
 
-        EditText dob = findViewById(R.id.dob);
-        dob.addTextChangedListener(new DateInputMask(dob));
+        EditText expiry = findViewById(R.id.expiryDate);
+        expiry.addTextChangedListener(new ExpiryDateInputMask(expiry));
+
+        int form_id = getIntent().getIntExtra("form_id", -1);
 
         dataObject = new HashMap<>();
         ids = new HashMap<>();
-        ids.put(R.id.ad, "ad");
-        ids.put(R.id.dob, "dob");
+        ids.put(R.id.cardNum, "cardNum");
+        ids.put(R.id.expiryDate, "expiryDate");
+        ids.put(R.id.CVV, "CVV");
 
         // Populate dataObject
         for(Map.Entry<Integer, String> entry : ids.entrySet()) {
@@ -109,16 +113,23 @@ public class ThirdActivity extends  BaseActivity {
 
             // Validate based on the key
             switch (key) {
-                case "ad":
-                    if (!FormValidator.validateMinLength(editText, 12, "Required 12 digit " + key)) {
+                case "cardNum":
+                    if (!FormValidator.validateMinLength(editText, 19, "Invalid Card Number")) {
                         isValid = false;
                     }
                     break;
-                case "dob":
-                    if (!FormValidator.validateMinLength(editText, 10,  "Invalid Date of Birth")) {
+                case "CVV":
+                    if (!FormValidator.validateMinLength(editText, 3,  "Invalid CVV")) {
                         isValid = false;
                     }
                     break;
+                case "expiryDate":
+                    if (!FormValidator.validateMinLength(editText, 5,  "Invalid Expiry Date")) {
+                        isValid = false;
+                    }
+                    break;
+
+
                 default:
                     break;
             }

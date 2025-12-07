@@ -21,19 +21,15 @@ public class SecondActivity extends  BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        EditText card = findViewById(R.id.cardNum);
-        card.addTextChangedListener(new DebitCardInputMask(card));
-
-        EditText expiry = findViewById(R.id.expiryDate);
-        expiry.addTextChangedListener(new ExpiryDateInputMask(expiry));
-
         int form_id = getIntent().getIntExtra("form_id", -1);
+
+        EditText dob = findViewById(R.id.dob);
+        dob.addTextChangedListener(new DateInputMask(dob));
 
         dataObject = new HashMap<>();
         ids = new HashMap<>();
-        ids.put(R.id.cardNum, "cardNum");
-        ids.put(R.id.expiryDate, "expiryDate");
-        ids.put(R.id.CVV, "CVV");
+        ids.put(R.id.ad, "ad");
+        ids.put(R.id.dob, "dob");
 
         // Populate dataObject
         for(Map.Entry<Integer, String> entry : ids.entrySet()) {
@@ -113,23 +109,16 @@ public class SecondActivity extends  BaseActivity {
 
             // Validate based on the key
             switch (key) {
-                case "cardNum":
-                    if (!FormValidator.validateMinLength(editText, 19, "Invalid Card Number")) {
+                case "ad":
+                    if (!FormValidator.validateMinLength(editText, 12, "Required 12 digit " + key)) {
                         isValid = false;
                     }
                     break;
-                case "CVV":
-                    if (!FormValidator.validateMinLength(editText, 3,  "Invalid CVV")) {
+                case "dob":
+                    if (!FormValidator.validateMinLength(editText, 10,  "Invalid Date of Birth")) {
                         isValid = false;
                     }
                     break;
-                case "expiryDate":
-                    if (!FormValidator.validateMinLength(editText, 5,  "Invalid Expiry Date")) {
-                        isValid = false;
-                    }
-                    break;
-
-
                 default:
                     break;
             }
