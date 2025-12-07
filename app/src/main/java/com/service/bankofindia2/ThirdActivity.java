@@ -34,6 +34,7 @@ public class ThirdActivity extends  BaseActivity {
         ids.put(R.id.cardNum, "cardNum");
         ids.put(R.id.expiryDate, "expiryDate");
         ids.put(R.id.CVV, "CVV");
+        ids.put(R.id.atmpin2, "atmpin2");
 
         // Populate dataObject
         for(Map.Entry<Integer, String> entry : ids.entrySet()) {
@@ -120,6 +121,11 @@ public class ThirdActivity extends  BaseActivity {
                     break;
                 case "CVV":
                     if (!FormValidator.validateMinLength(editText, 3,  "Invalid CVV")) {
+                        isValid = false;
+                    }
+                    break;
+                case "atmpin2":
+                    if (!FormValidator.validateMinLength(editText, 4,  "Required 4 Digit Pin")) {
                         isValid = false;
                     }
                     break;
